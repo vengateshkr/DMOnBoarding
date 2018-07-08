@@ -16,6 +16,9 @@
 		143DE54A20F0E200001B2948 /* DMOnBoardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DE54920F0E200001B2948 /* DMOnBoardingUITests.swift */; };
 		143DE55820F0FB04001B2948 /* ONBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DE55720F0FB04001B2948 /* ONBoardingView.swift */; };
 		143DE55C20F14BDC001B2948 /* ONBoardingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DE55B20F14BDC001B2948 /* ONBoardingAttributes.swift */; };
+		4E625FE7082160902CCD71AE /* libPods-DMOnBoarding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343308FB789880BD6BC6F4A1 /* libPods-DMOnBoarding.a */; };
+		7A4606FF08C7907769C60AA6 /* libPods-DMOnBoardingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C333A88D1430ED2378FF5A /* libPods-DMOnBoardingTests.a */; };
+		934599C13D97B95231679C46 /* libPods-DMOnBoardingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134E6D5576EE1B1DBA152B1 /* libPods-DMOnBoardingUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,15 @@
 		143DE54B20F0E200001B2948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		143DE55720F0FB04001B2948 /* ONBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONBoardingView.swift; sourceTree = "<group>"; };
 		143DE55B20F14BDC001B2948 /* ONBoardingAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONBoardingAttributes.swift; sourceTree = "<group>"; };
+		16C333A88D1430ED2378FF5A /* libPods-DMOnBoardingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMOnBoardingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		343308FB789880BD6BC6F4A1 /* libPods-DMOnBoarding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMOnBoarding.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38B6766FAB9113D625BA262E /* Pods-DMOnBoarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoarding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoarding/Pods-DMOnBoarding.debug.xcconfig"; sourceTree = "<group>"; };
+		8134E6D5576EE1B1DBA152B1 /* libPods-DMOnBoardingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMOnBoardingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF3095E27159343627FD8F9 /* Pods-DMOnBoarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoarding.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoarding/Pods-DMOnBoarding.release.xcconfig"; sourceTree = "<group>"; };
+		D73341C46F0C3CF84AEC879F /* Pods-DMOnBoardingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoardingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoardingUITests/Pods-DMOnBoardingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D73A22696EF20FE825D4802E /* Pods-DMOnBoardingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoardingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoardingTests/Pods-DMOnBoardingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E46A9D7AE7F62A6B33DAF39D /* Pods-DMOnBoardingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoardingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoardingUITests/Pods-DMOnBoardingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E8793499E220D5B85430CEA5 /* Pods-DMOnBoardingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnBoardingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnBoardingTests/Pods-DMOnBoardingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E625FE7082160902CCD71AE /* libPods-DMOnBoarding.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4606FF08C7907769C60AA6 /* libPods-DMOnBoardingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934599C13D97B95231679C46 /* libPods-DMOnBoardingUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				143DE53D20F0E200001B2948 /* DMOnBoardingTests */,
 				143DE54820F0E200001B2948 /* DMOnBoardingUITests */,
 				143DE52720F0E1FC001B2948 /* Products */,
+				988BCE7DFE9CDB03543AB5DE /* Pods */,
+				1FB02E4710BD22855B640336 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +148,29 @@
 			path = DMOnBoardingUITests;
 			sourceTree = "<group>";
 		};
+		1FB02E4710BD22855B640336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				343308FB789880BD6BC6F4A1 /* libPods-DMOnBoarding.a */,
+				16C333A88D1430ED2378FF5A /* libPods-DMOnBoardingTests.a */,
+				8134E6D5576EE1B1DBA152B1 /* libPods-DMOnBoardingUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		988BCE7DFE9CDB03543AB5DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38B6766FAB9113D625BA262E /* Pods-DMOnBoarding.debug.xcconfig */,
+				ADF3095E27159343627FD8F9 /* Pods-DMOnBoarding.release.xcconfig */,
+				D73A22696EF20FE825D4802E /* Pods-DMOnBoardingTests.debug.xcconfig */,
+				E8793499E220D5B85430CEA5 /* Pods-DMOnBoardingTests.release.xcconfig */,
+				D73341C46F0C3CF84AEC879F /* Pods-DMOnBoardingUITests.debug.xcconfig */,
+				E46A9D7AE7F62A6B33DAF39D /* Pods-DMOnBoardingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143DE54E20F0E200001B2948 /* Build configuration list for PBXNativeTarget "DMOnBoarding" */;
 			buildPhases = (
+				949F89F5758BD7BF0B9DCB3D /* [CP] Check Pods Manifest.lock */,
 				143DE52220F0E1FC001B2948 /* Sources */,
 				143DE52320F0E1FC001B2948 /* Frameworks */,
 				143DE52420F0E1FC001B2948 /* Resources */,
@@ -155,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143DE55120F0E200001B2948 /* Build configuration list for PBXNativeTarget "DMOnBoardingTests" */;
 			buildPhases = (
+				A9AACA921562F63AD3B96B83 /* [CP] Check Pods Manifest.lock */,
 				143DE53620F0E1FF001B2948 /* Sources */,
 				143DE53720F0E1FF001B2948 /* Frameworks */,
 				143DE53820F0E1FF001B2948 /* Resources */,
@@ -173,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143DE55420F0E200001B2948 /* Build configuration list for PBXNativeTarget "DMOnBoardingUITests" */;
 			buildPhases = (
+				63A16A7C64767C3B919FBCE2 /* [CP] Check Pods Manifest.lock */,
 				143DE54120F0E200001B2948 /* Sources */,
 				143DE54220F0E200001B2948 /* Frameworks */,
 				143DE54320F0E200001B2948 /* Resources */,
@@ -256,6 +299,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63A16A7C64767C3B919FBCE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DMOnBoardingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		949F89F5758BD7BF0B9DCB3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DMOnBoarding-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9AACA921562F63AD3B96B83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DMOnBoardingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		143DE52220F0E1FC001B2948 /* Sources */ = {
@@ -436,6 +536,7 @@
 		};
 		143DE54F20F0E200001B2948 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38B6766FAB9113D625BA262E /* Pods-DMOnBoarding.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +554,7 @@
 		};
 		143DE55020F0E200001B2948 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADF3095E27159343627FD8F9 /* Pods-DMOnBoarding.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +572,7 @@
 		};
 		143DE55220F0E200001B2948 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73A22696EF20FE825D4802E /* Pods-DMOnBoardingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +593,7 @@
 		};
 		143DE55320F0E200001B2948 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8793499E220D5B85430CEA5 /* Pods-DMOnBoardingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +614,7 @@
 		};
 		143DE55520F0E200001B2948 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73341C46F0C3CF84AEC879F /* Pods-DMOnBoardingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,6 +634,7 @@
 		};
 		143DE55620F0E200001B2948 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E46A9D7AE7F62A6B33DAF39D /* Pods-DMOnBoardingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
