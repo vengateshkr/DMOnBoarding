@@ -1,0 +1,29 @@
+
+
+{
+    "pages" : [{
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               }, {
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               }, {
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               },
+               {
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               },
+               {
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               },
+               {
+               "title" : "Drink Finder",
+               "desc" : "Check real time in th store help you finding"
+               }],
+    "btnTitle" : "Skip",
+    "lastPageBtnTitle" : "Get Started"
+}
+

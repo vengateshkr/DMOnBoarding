@@ -15,6 +15,12 @@ protocol ONBoardingViewDelegate {
 class ONBoardingView: UIView {
     
     var delegate : ONBoardingViewDelegate?
+    var targetView : UIView!
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+
+     var viewModel: ONBoardingViewModel = {
+        return ONBoardingViewModel()
+    }()
     
     var scrollView : UIScrollView! = {
         let scrollView = UIScrollView()
@@ -36,13 +42,8 @@ class ONBoardingView: UIView {
         super.init(coder: aDecoder)
     }
     
-    required init(targetView : UIView, numberOfPages : Int) {
-        super.init(frame: UIScreen.main.bounds)
-        
-        targetView.backgroundColor = .red
-        targetView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.frame = CGRect(x: 0, y: 0, width: targetView.frame.width, height: targetView.frame.height)
-        targetView.addSubview(scrollView)
+    fileprivate func initialViewSetup(_ numberOfPages: Int) {
+
         
         scrollView?.leftAnchor.constraint(equalTo: targetView.leftAnchor, constant: 30).isActive = true
         scrollView?.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: -30).isActive = true
@@ -52,11 +53,48 @@ class ONBoardingView: UIView {
         scrollView?.layoutIfNeeded()
         scrollView?.contentSize = CGSize(width: (scrollView?.frame.width)! * CGFloat(numberOfPages), height: (scrollView?.frame.height)!)
         
-        for i in 0...numberOfPages - 1 {
-            layoutViews(numberOfPages, i)
+        for i in 0...numberOfPages-1 {
+            layoutViews(numberOfPages , i)
         }
     }
     
+    required init(targetView : UIView) {
+        super.init(frame: UIScreen.main.bounds)
+        self.targetView = targetView
+        self.targetView.backgroundColor = .red
+        self.targetView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.frame = CGRect(x: 0, y: 0, width: targetView.frame.width, height: targetView.frame.height)
+        self.targetView.addSubview(scrollView)
+  
+        initVM()
+    }
+    
+    func initVM() {
+        
+
+        viewModel.updateLoadingStatus = { [weak self] () in
+            DispatchQueue.main.async {
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                  //  self?.initialViewSetup(targetView, numberOfPages)
+                    })
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+        }
+        
+        viewModel.reloadTableViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.initialViewSetup((self?.viewModel.onBoardingModel.pages.count)!)
+                print("called back")
+            }
+        }
+        
+        self.viewModel.initFetch()
+    }
     
     //MARK: - UI Custom Methods
     
@@ -102,7 +140,8 @@ class ONBoardingView: UIView {
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
-        lbl.text = ONBoardingAttributes.titles[i]
+        
+        lbl.text = viewModel.onBoardingModel.pages[i].title
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }
@@ -114,7 +153,8 @@ class ONBoardingView: UIView {
         lbl.textColor = .black
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        lbl.text = ONBoardingAttributes.descriptions[i]
+        //lbl.text = ONBoardingAttributes.descriptions[i]
+        lbl.text = viewModel.onBoardingModel.pages[i].desc
         lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -126,12 +166,14 @@ class ONBoardingView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         if i == numberOfPages - 1 {
-            button.setTitle(ONBoardingAttributes.lastPageBtnTitle, for: .normal)
+        //    button.setTitle(ONBoardingAttributes.lastPageBtnTitle, for: .normal)
+            button.setTitle(viewModel.onBoardingModel.lastPageBtnTitle, for: .normal)
             button.backgroundColor = .green
             button.setTitleColor(.white, for: .normal)
         }
         else {
-            button.setTitle(ONBoardingAttributes.btnTitle, for: .normal)
+         //   button.setTitle(ONBoardingAttributes.btnTitle, for: .normal)
+            button.setTitle(viewModel.onBoardingModel.btnTitle, for: .normal)
             button.backgroundColor = .clear
             button.setTitleColor(.green, for: .normal)
         }
@@ -184,7 +226,7 @@ class ONBoardingView: UIView {
     
     
     @objc func onbViewbuttonAction(_ sender: UIButton!) {
-        //
+        delegate?.buttonClicked()
     }
     
 }

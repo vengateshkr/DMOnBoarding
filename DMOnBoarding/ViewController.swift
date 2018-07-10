@@ -10,15 +10,13 @@ import UIKit
 
 class ViewController: UIViewController,ONBoardingViewDelegate {
     
-    var targetView : UIView!
-    var scrollView : UIScrollView?
+    var onBoardingView : ONBoardingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view = ONBoardingView(targetView: self.view, numberOfPages: 3)
-        view.delegate = self
-        
+        self.onBoardingView = ONBoardingView(targetView: self.view)
+        self.onBoardingView.delegate = self
     }
     
     @objc func onbViewbuttonAction(_ sender: UIButton!) {
@@ -27,7 +25,6 @@ class ViewController: UIViewController,ONBoardingViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //print(scrollView?.frame.size.width,self.view.frame.size.width)
     }
     
     func buttonClicked() {
