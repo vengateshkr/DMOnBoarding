@@ -32,8 +32,6 @@ class ONBoardingViewModel {
 
     
     var isAllowSegue: Bool = false
-    
-
     var reloadTableViewClosure: (()->())?
     var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
