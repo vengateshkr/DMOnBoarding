@@ -2,26 +2,14 @@
 
 {
     "pages" : [{
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
+               "title" : "Drink finder",
+               "desc" : "A personal assistant that helps you discover, find & acquire the perfect drink for each occasion"
                }, {
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
+               "title" : "Personalised shopping experience Finder",
+               "desc" : "Get personalised offers & recommendations, easily re-order products you liked,track & get notified."
                }, {
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
-               },
-               {
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
-               },
-               {
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
-               },
-               {
-               "title" : "Drink Finder",
-               "desc" : "Check real time in th store help you finding"
+               "title" : "Enhanced instore visits",
+               "desc" : "Check real time product availabilty get finding your items in store"
                }],
     "btnTitle" : "Skip",
     "lastPageBtnTitle" : "Get Started"

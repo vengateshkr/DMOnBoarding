@@ -17,8 +17,8 @@ class ONBoardingView: UIView {
     var delegate : ONBoardingViewDelegate?
     var targetView : UIView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
-
-     var viewModel: ONBoardingViewModel = {
+    
+    var viewModel: ONBoardingViewModel = {
         return ONBoardingViewModel()
     }()
     
@@ -43,8 +43,6 @@ class ONBoardingView: UIView {
     }
     
     fileprivate func initialViewSetup(_ numberOfPages: Int) {
-
-        
         scrollView?.leftAnchor.constraint(equalTo: targetView.leftAnchor, constant: 30).isActive = true
         scrollView?.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: -30).isActive = true
         scrollView?.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 60).isActive = true
@@ -63,22 +61,30 @@ class ONBoardingView: UIView {
         self.targetView = targetView
         self.targetView.backgroundColor = .red
         self.targetView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let imageview : UIImageView? = UIImageView(image: #imageLiteral(resourceName: "Bg_image"))
+        self.targetView.addSubview(imageview!)
+        imageview?.translatesAutoresizingMaskIntoConstraints = false
+        imageview?.leftAnchor.constraint(equalTo: targetView.leftAnchor, constant: 0).isActive = true
+        imageview?.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: 0).isActive = true
+        imageview?.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 0).isActive = true
+        imageview?.bottomAnchor.constraint(equalTo: targetView.bottomAnchor, constant: 0).isActive = true
+        
         scrollView.frame = CGRect(x: 0, y: 0, width: targetView.frame.width, height: targetView.frame.height)
         self.targetView.addSubview(scrollView)
-  
+        
         initVM()
     }
     
     func initVM() {
         
-
         viewModel.updateLoadingStatus = { [weak self] () in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
                     self?.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                  //  self?.initialViewSetup(targetView, numberOfPages)
+                        //  self?.initialViewSetup(targetView, numberOfPages)
                     })
                 } else {
                     self?.activityIndicator.stopAnimating()
@@ -112,11 +118,17 @@ class ONBoardingView: UIView {
     
     fileprivate func createCircleImageView(_ numberOfPages: Int, _ i: Int) -> UIImageView {
         let circleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        circleView.layer.borderColor = UIColor.green.cgColor
-        circleView.layer.borderWidth = 3.0
+        if i  == 0 {
+            circleView.image = #imageLiteral(resourceName: "Sparkling_Cheese")
+        }
+        else if i  == 1 {
+            circleView.image = #imageLiteral(resourceName: "Offers_out")
+        }
+        else  {
+            circleView.image = #imageLiteral(resourceName: "Badge_In_store")
+        }
         circleView.backgroundColor = .white
         circleView.translatesAutoresizingMaskIntoConstraints = false
-        circleView.layer.cornerRadius = circleView.frame.width / 2.0
         return circleView
     }
     
@@ -140,7 +152,6 @@ class ONBoardingView: UIView {
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
-        
         lbl.text = viewModel.onBoardingModel.pages[i].title
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -153,7 +164,6 @@ class ONBoardingView: UIView {
         lbl.textColor = .black
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        //lbl.text = ONBoardingAttributes.descriptions[i]
         lbl.text = viewModel.onBoardingModel.pages[i].desc
         lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -166,13 +176,13 @@ class ONBoardingView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         if i == numberOfPages - 1 {
-        //    button.setTitle(ONBoardingAttributes.lastPageBtnTitle, for: .normal)
+            //    button.setTitle(ONBoardingAttributes.lastPageBtnTitle, for: .normal)
             button.setTitle(viewModel.onBoardingModel.lastPageBtnTitle, for: .normal)
             button.backgroundColor = .green
             button.setTitleColor(.white, for: .normal)
         }
         else {
-         //   button.setTitle(ONBoardingAttributes.btnTitle, for: .normal)
+            //   button.setTitle(ONBoardingAttributes.btnTitle, for: .normal)
             button.setTitle(viewModel.onBoardingModel.btnTitle, for: .normal)
             button.backgroundColor = .clear
             button.setTitleColor(.green, for: .normal)
@@ -198,17 +208,17 @@ class ONBoardingView: UIView {
         containerView.addSubview(pageControl)
         containerView.addSubview(button)
         
-        circleView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 110).isActive = true
+        circleView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 120).isActive = true
         circleView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        circleView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        circleView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        circleView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        circleView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
-        titleLbl.topAnchor.constraint(equalTo: circleView.topAnchor, constant: 120).isActive = true
+        titleLbl.topAnchor.constraint(equalTo: circleView.bottomAnchor , constant: 40).isActive = true
         titleLbl.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        titleLbl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        titleLbl.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        titleLbl.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        titleLbl.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        descLbl.topAnchor.constraint(equalTo: titleLbl.topAnchor, constant: 100).isActive = true
+        descLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 10).isActive = true
         descLbl.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         descLbl.widthAnchor.constraint(equalToConstant: 200).isActive = true
         descLbl.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -219,8 +229,8 @@ class ONBoardingView: UIView {
         pageControl.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -60).isActive = true
         
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 30).isActive = true
-        button.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -30).isActive = true
+        button.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15).isActive = true
+        button.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -15).isActive = true
         button.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10).isActive = true
     }
     

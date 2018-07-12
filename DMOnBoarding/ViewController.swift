@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController,ONBoardingViewDelegate {
     
     var onBoardingView : ONBoardingView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +19,7 @@ class ViewController: UIViewController,ONBoardingViewDelegate {
         self.onBoardingView.delegate = self
     }
     
-    @objc func onbViewbuttonAction(_ sender: UIButton!) {
-        print("buttonAction")
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }

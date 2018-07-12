@@ -10,6 +10,12 @@ import Foundation
 
 class ONBoardingViewModel {
     
+    typealias comp = (()->())?
+    var isAllowSegue: Bool = false
+    var reloadTableViewClosure:comp
+    var showAlertClosure: comp
+    var updateLoadingStatus: comp
+    
     let apiService: APIServiceProtocol
     
      var onBoardingModel : ONBoardingModel! {
@@ -29,12 +35,6 @@ class ONBoardingViewModel {
             self.showAlertClosure?()
         }
     }
-
-    
-    var isAllowSegue: Bool = false
-    var reloadTableViewClosure: (()->())?
-    var showAlertClosure: (()->())?
-    var updateLoadingStatus: (()->())?
 
     init( apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
